@@ -1,0 +1,18 @@
+import { Test, TestingModule } from '@nestjs/testing';
+import { DueniosController } from './duenios.controller';
+
+describe('DueniosController', () => {
+  let controller: DueniosController;
+
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      controllers: [DueniosController],
+    }).compile();
+
+    controller = module.get<DueniosController>(DueniosController);
+  });
+
+  it('debería estar definido', () => {
+    expect(controller).toBeDefined();
+  });
+});
