@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
+import { DuenosController } from './duenos.controller';
+import { DuenosService } from './duenos.service';
 
-@Module({})
-export class DuenioModel {
-  id: string;
-  nombre: string;
-  telefono: string;
-  email: string;
-}
-
+@Module({
+  controllers: [DuenosController],
+  providers: [DuenosService],
+  exports: [DuenosService],
+})
+export class DuenosModule {}

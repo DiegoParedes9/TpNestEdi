@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
+import { TurnosController } from './turnos.controller';
+import { TurnosService } from './turnos.service';
 
-@Module({})
-export class TurnoModel {
-  id: string;
-  idMascota: string;
-  motivo: string;
-  fecha: string; 
-}
-
+@Module({
+  controllers: [TurnosController],
+  providers: [TurnosService],
+  exports: [TurnosService],
+})
+export class TurnosModule {}

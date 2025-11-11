@@ -1,7 +1,13 @@
 import { Module } from '@nestjs/common';
+import { MascotasController } from './mascotas.controller';
+import { MascotasService } from './mascotas.service';
 
-@Module({})
-export class MascotaModel {
+@Module({
+  controllers: [MascotasController],
+  providers: [MascotasService],
+  exports: [MascotasService],
+})
+export class MascotasModule {
   id: string;
   nombre: string;
   especie: string; 

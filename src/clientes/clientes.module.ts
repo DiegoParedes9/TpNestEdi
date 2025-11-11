@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
+import { ClientesController } from './clientes.controller';
+import { ClientesService } from './clientes.service';
 
-@Module({})
-export class ClienteModel {
-  id: string;
-  nombre: string;
-  telefono: string;
-  email: string;
-}
+@Module({
+  controllers: [ClientesController],
+  providers: [ClientesService],
+  exports: [ClientesService],
+})
+export class ClientesModule {}
